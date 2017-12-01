@@ -13,6 +13,8 @@
 		8C30A20B1FD20FF500B2991A /* FineLevelDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30A20A1FD20FF500B2991A /* FineLevelDBTests.swift */; };
 		8C30A20D1FD20FF500B2991A /* FineLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A1F81FD20D2300B2991A /* FineLevelDB.framework */; };
 		8C30A2131FD2122100B2991A /* LevelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30A2021FD20E7A00B2991A /* LevelDB.swift */; };
+		8C30A2161FD2153000B2991A /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A2151FD2153000B2991A /* leveldb.framework */; };
+		8C30A2831FD222A800B2991A /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A2821FD222A800B2991A /* leveldb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		8C30A2081FD20FF500B2991A /* FineLevelDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FineLevelDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C30A20A1FD20FF500B2991A /* FineLevelDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FineLevelDBTests.swift; sourceTree = "<group>"; };
 		8C30A20C1FD20FF500B2991A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C30A2151FD2153000B2991A /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = Carthage/Build/iOS/leveldb.framework; sourceTree = "<group>"; };
+		8C30A2821FD222A800B2991A /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = Carthage/Build/Mac/leveldb.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C30A2161FD2153000B2991A /* leveldb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C30A2831FD222A800B2991A /* leveldb.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,7 @@
 				8C30A2001FD20D2F00B2991A /* Sources */,
 				8C30A2091FD20FF500B2991A /* FineLevelDBTests */,
 				8C30A1EB1FD20D0C00B2991A /* Products */,
+				8C30A2141FD2152F00B2991A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +105,15 @@
 				8C30A20C1FD20FF500B2991A /* Info.plist */,
 			);
 			path = FineLevelDBTests;
+			sourceTree = "<group>";
+		};
+		8C30A2141FD2152F00B2991A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C30A2821FD222A800B2991A /* leveldb.framework */,
+				8C30A2151FD2153000B2991A /* leveldb.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +350,10 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -410,6 +430,10 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -479,6 +503,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -555,6 +583,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
