@@ -1,0 +1,4 @@
+module cleveldb [system] {
+    header "../Carthage/Build/iOS/leveldb.framework/Headers/c.h"
+    export *
+}

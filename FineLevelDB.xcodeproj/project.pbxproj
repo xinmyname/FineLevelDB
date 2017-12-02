@@ -11,7 +11,6 @@
 		8C30A2011FD20DB300B2991A /* FineLevelDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C30A1ED1FD20D0C00B2991A /* FineLevelDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C30A2031FD20E7A00B2991A /* LevelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30A2021FD20E7A00B2991A /* LevelDB.swift */; };
 		8C30A20B1FD20FF500B2991A /* FineLevelDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30A20A1FD20FF500B2991A /* FineLevelDBTests.swift */; };
-		8C30A20D1FD20FF500B2991A /* FineLevelDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A1F81FD20D2300B2991A /* FineLevelDB.framework */; };
 		8C30A2131FD2122100B2991A /* LevelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30A2021FD20E7A00B2991A /* LevelDB.swift */; };
 		8C30A2161FD2153000B2991A /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A2151FD2153000B2991A /* leveldb.framework */; };
 		8C30A2831FD222A800B2991A /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C30A2821FD222A800B2991A /* leveldb.framework */; };
@@ -38,6 +37,7 @@
 		8C30A20C1FD20FF500B2991A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C30A2151FD2153000B2991A /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = Carthage/Build/iOS/leveldb.framework; sourceTree = "<group>"; };
 		8C30A2821FD222A800B2991A /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = Carthage/Build/Mac/leveldb.framework; sourceTree = "<group>"; };
+		8C30A2851FD2236800B2991A /* module.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.map; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C30A20D1FD20FF500B2991A /* FineLevelDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +70,7 @@
 		8C30A1DE1FD20C9F00B2991A = {
 			isa = PBXGroup;
 			children = (
+				8C30A2841FD2234400B2991A /* cleveldb */,
 				8C30A2001FD20D2F00B2991A /* Sources */,
 				8C30A2091FD20FF500B2991A /* FineLevelDBTests */,
 				8C30A1EB1FD20D0C00B2991A /* Products */,
@@ -114,6 +114,14 @@
 				8C30A2151FD2153000B2991A /* leveldb.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C30A2841FD2234400B2991A /* cleveldb */ = {
+			isa = PBXGroup;
+			children = (
+				8C30A2851FD2236800B2991A /* module.map */,
+			);
+			path = cleveldb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +306,14 @@
 		8C30A1E31FD20C9F00B2991A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_INCLUDE_PATHS = cleveldb;
 			};
 			name = Debug;
 		};
 		8C30A1E41FD20C9F00B2991A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				SWIFT_INCLUDE_PATHS = cleveldb;
 			};
 			name = Release;
 		};
@@ -650,6 +660,10 @@
 				DEVELOPMENT_TEAM = Z957FUF6L7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -716,6 +730,10 @@
 				DEVELOPMENT_TEAM = Z957FUF6L7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

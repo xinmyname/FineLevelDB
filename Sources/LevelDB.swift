@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import cleveldb
 
 public class LevelDB : NSObject {
     
@@ -17,6 +18,7 @@ public class LevelDB : NSObject {
     public init(path:String) {
         
         _path = path
+        NSLog("Database path: \(_path)")
     }
     
     @objc
